@@ -1,0 +1,37 @@
+{
+  "name": "image-file-checker",
+  "version": "1.0.0",
+  "description": "Checking Image files file format",
+  "main": "src/index.ts",
+  "watch": {
+    "build": {
+      "patterns": ["src/**/*.{ts,tsx}", "build.js"],
+      "extensions": "ts,tsx,js",
+      "runOnChangeOnly": true
+    }
+  },
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npm-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbyso23/image-file-checker.git"
+  },
+  "author": "Zbysek Lipka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zbyso23/image-file-checker/issues"
+  },
+  "homepage": "https://github.com/zbyso23/image-file-checker#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.21.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.12",
+    "npm-watch": "^0.13.0",
+    "ts-node": "^10.9.2"
+  }
+}

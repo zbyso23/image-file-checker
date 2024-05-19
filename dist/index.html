@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Checker</title>
+  </head>
+  <body>
+    <div class="file-select">
+      <label for="image">Choose a file:</label>
+      <input type="file" id="image" name="image" accept="image/png, image/jpeg" />
+    </div>
+    <script src="bundle.js"></script>
+    <script>
+      window.onload = () => {
+        const fileInput = document.querySelector('input[type="file"]');
+        fileInput.addEventListener('change', async (e) => {
+          const file = fileInput.files[0];
+          const result = await ImageFileChecker.testImageFile(file);
+          console.log(`ImageFileChecker.testImageFile`, result);
+          alert(JSON.stringify(result));
+        });
+      };
+    </script>
+  </body>
+</html>
