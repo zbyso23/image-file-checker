@@ -5,14 +5,18 @@
   "main": "src/index.ts",
   "watch": {
     "build": {
-      "patterns": ["src/**/*.{ts,tsx}", "build.js"],
+      "patterns": [
+        "src/**/*.{ts,tsx}",
+        "build.js"
+      ],
       "extensions": "ts,tsx,js",
       "runOnChangeOnly": true
     }
   },
   "scripts": {
     "build": "node build.js",
-    "dev": "npm-watch"
+    "dev": "npm-watch",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,8 +29,11 @@
   },
   "homepage": "https://github.com/zbyso23/image-file-checker#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "concurrently": "^8.2.2",
     "esbuild": "^0.21.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
