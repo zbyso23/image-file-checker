@@ -1,17 +1,17 @@
 import { mock } from "../../mock";
 import { BinaryReader } from "../../utils";
-import { check } from "./gif";
+import { check } from "./png";
 
-const { gif87a, gif89a, svg } = mock;
+const { gif89a, svg, png } = mock;
 
-test('success GIF87a format', () => {
-  const binaryReader = new BinaryReader(gif87a.buffer);
+test('success PNG format', () => {
+  const binaryReader = new BinaryReader(png.buffer);
   expect(check(binaryReader)).toBe(true);
 });
 
-test('success GIF89a format', () => {
+test('failed GIF89a format', () => {
   const binaryReader = new BinaryReader(gif89a.buffer);
-  expect(check(binaryReader)).toBe(true);
+  expect(check(binaryReader)).toBe(false);
 });
 
 test('failed SVG format', () => {
